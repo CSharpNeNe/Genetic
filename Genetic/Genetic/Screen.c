@@ -60,6 +60,8 @@ void print_random_character_and_score(char* character, Color* color) {
 
 int calculate_score(char* characters) {
     int score = 0;
+    int s_count = 0; // S의 횟수
+    int g_count = 0; // G의 횟수
     for (int i = 0; i < 6; i++) {
         switch (characters[i]) {
         case 'X':
@@ -73,14 +75,23 @@ int calculate_score(char* characters) {
             break;
         case 'S':
             score += 40;
+            s_count++;
             break;
         case 'G':
             score += 20;
+            g_count++;
             break;
         default:
             break;
         }
     }
+
+    // S의 개수가 2개 이상이면 100점 추가
+    if (s_count >= 2)
+        score += 100;
+    // G의 개수가 2개 이상이면 50점 추가
+    if (g_count >= 2)
+        score += 50;
     return score;
 } // 최종 점수 계산 함수
 
@@ -210,6 +221,7 @@ int main() {
             printf("\n게임 설명:\n");
             printf("Genetic은 X, B, N, S, G 문자가 랜덤으로 구성된 6개의 유전자입니다. 문자를 지정해 바꿀 수 있는 기회가 3번 있고, 가장 좋은 유전자를 구성하는게 목표입니다.\n");
             printf("X, B, N은 각각 -30, -20, -10점, S는 40점, G는 20점입니다. 가장 높은 점수를 기록해보세요.\n");
+            printf("S가 2개 이상이면 100점 추가,G가 2개 이상이면 50점 추가되어 점수가 합산되므로, 좋은 유전자를 만들기 위해 노력해보세요.");
         }
         else if (choice == 3) {
             // 종료
