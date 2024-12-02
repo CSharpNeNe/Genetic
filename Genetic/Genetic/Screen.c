@@ -24,6 +24,13 @@ int main() {
     // 선택지 출력
     print_centered("1. 시작 2.설명 3.종료 ");
 
+    srand(time(NULL));
+
+    // 1번부터 6번까지 출력
+    for (int i = 0; i < 6; i++) {
+        print_random_character_and_score();
+    }
+
     return 0;
 }
 //유전자 1번째부터 6번째까지 색깔과 문자 출력
