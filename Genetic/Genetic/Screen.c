@@ -5,6 +5,7 @@
 #include <time.h>
 
 #define WIDTH 80  // 화면 너비
+#define _CRT_SECURE_NO_WARNINGS //scanf 경고 무시
 // 문자열을 가운데로 출력하는 함수
 
 typedef enum {
@@ -41,27 +42,6 @@ void print_centered(const char* str)  {
     printf("%s\n", str);  // 문자열 출력
 } //글자 중앙 출력 함수
 
-int main() {
-    system("cls");  //콘솔 정리
-
-    // 게임 제목을 가운데에 출력
-    print_centered("유전자 결합 게임");
-
-    printf("\n\n");
-
-    // 선택지 출력
-    print_centered("1. 시작 2.설명 3.종료 ");
-
-    srand(time(NULL));
-
-    // 1번부터 6번까지 출력
-    for (int i = 0; i < 6; i++) {
-        print_random_character_and_score();
-    }
-
-    return 0;
-}
-
 void print_random_character_and_score() {
     // 랜덤 문자를 생성 (0부터 5까지)
     char characters[] = { 'X', 'B', 'N', 'S', 'G' };
@@ -77,3 +57,55 @@ void print_random_character_and_score() {
     // 문자 출력
     printf("%c: %d점\n", characters[index], scores[index]);
 } //유전자 1번째부터 6번째까지 색깔과 문자 출력
+
+void display_menu() {
+    // 메뉴를 화면에 출력
+    print_centered("유전자 결합 게임");
+    printf("\n");  // 한 줄 공백
+
+    print_centered("1. 시작");
+    print_centered("2. 설명");
+    print_centered("3. 종료");
+}
+
+int main() {
+    // 랜덤 시드를 초기화
+    srand(time(NULL));
+
+    // 게임 시작 화면 출력
+    display_menu();
+
+    // 사용자 선택을 받기 위한 변수
+    int choice;
+    printf("\n선택: ");
+    scanf("%d", &choice);
+
+    // 선택에 따른 처리
+    switch (choice) {
+    case 1:
+        // 게임 시작
+        printf("\n게임을 시작합니다!\n\n");
+        // 1번부터 6번까지 랜덤으로 문자 출력 및 점수 출력
+        for (int i = 0; i < 6; i++) {
+            print_random_character_and_score();
+        }
+        break;
+    case 2:
+        // 게임 설명
+        printf("\n게임 설명:\n");
+        printf("이 게임은 X, B, N, S, G 문자가 랜덤으로 나와 점수를 부여합니다.\n");
+        printf("X, B, N은 -10점, S는 40점, G는 20점입니다.\n");
+        printf("랜덤하게 점수를 계산하고 출력합니다.\n");
+        break;
+    case 3:
+        // 종료
+        printf("\n게임을 종료합니다.\n");
+        break;
+    default:
+        // 잘못된 선택
+        printf("\n잘못된 선택입니다. 1, 2, 3 중에서 선택해 주세요.\n");
+        break;
+    }
+
+    return 0;
+}

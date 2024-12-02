@@ -5,14 +5,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{37CE4DA2-3FF6-452F-847E-05ACBB3AF2FE}|Genetic\\Genetic.vcxproj|C:\\Users\\addmin\\Desktop\\Genetic\\Genetic\\Genetic\\Screen.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{37CE4DA2-3FF6-452F-847E-05ACBB3AF2FE}|Genetic\\Genetic.vcxproj|solutionrelative:Genetic\\Screen.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{37CE4DA2-3FF6-452F-847E-05ACBB3AF2FE}|Genetic\\Genetic.vcxproj|C:\\Users\\addmin\\Desktop\\Genetic\\Genetic\\Genetic\\Calculator.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{37CE4DA2-3FF6-452F-847E-05ACBB3AF2FE}|Genetic\\Genetic.vcxproj|solutionrelative:Genetic\\Calculator.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{37CE4DA2-3FF6-452F-847E-05ACBB3AF2FE}|Genetic\\Genetic.vcxproj|C:\\Users\\addmin\\Desktop\\Genetic\\Genetic\\Genetic\\Color.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{37CE4DA2-3FF6-452F-847E-05ACBB3AF2FE}|Genetic\\Genetic.vcxproj|solutionrelative:Genetic\\Color.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,33 +14,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Calculator.h",
-              "DocumentMoniker": "C:\\Users\\addmin\\Desktop\\Genetic\\Genetic\\Genetic\\Calculator.h",
-              "RelativeDocumentMoniker": "Genetic\\Calculator.h",
-              "ToolTip": "C:\\Users\\addmin\\Desktop\\Genetic\\Genetic\\Genetic\\Calculator.h",
-              "RelativeToolTip": "Genetic\\Calculator.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-02T01:38:33.525Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Color.h",
-              "DocumentMoniker": "C:\\Users\\addmin\\Desktop\\Genetic\\Genetic\\Genetic\\Color.h",
-              "RelativeDocumentMoniker": "Genetic\\Color.h",
-              "ToolTip": "C:\\Users\\addmin\\Desktop\\Genetic\\Genetic\\Genetic\\Color.h",
-              "RelativeToolTip": "Genetic\\Color.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-02T01:34:42.446Z"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -57,7 +24,7 @@
               "RelativeDocumentMoniker": "Genetic\\Screen.c",
               "ToolTip": "C:\\Users\\addmin\\Desktop\\Genetic\\Genetic\\Genetic\\Screen.c",
               "RelativeToolTip": "Genetic\\Screen.c",
-              "ViewState": "AgIAADwAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAE8AAAAAAAAAAAAAAAcAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2024-12-02T00:33:30.589Z",
               "EditorCaption": ""
