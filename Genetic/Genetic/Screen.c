@@ -1,3 +1,4 @@
+#define _CRT_SECURE_NO_WARNINGS //scanf 경고 무시
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -5,7 +6,6 @@
 #include <time.h>
 
 #define WIDTH 80  // 화면 너비
-#define _CRT_SECURE_NO_WARNINGS //scanf 경고 무시
 // 문자열을 가운데로 출력하는 함수
 
 typedef enum {
