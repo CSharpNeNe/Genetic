@@ -47,7 +47,7 @@ void print_centered(const char* str) {
 void print_random_character_and_score(char* character, Color* color) {
     // 랜덤 문자를 생성 (0부터 5까지)
     char characters[] = { 'X', 'B', 'N', 'S', 'G' };
-    int scores[] = { -10, -10, -10, 40, 20 };  // 각 문자의 점수
+    int scores[] = { -30, -20, -10, 40, 20 };  // 각 문자의 점수
     Color colors[] = { RED, RED, RED, YELLOW, YELLOW };  // 빨간색은 X, B, N, 노란색은 S, G
 
     // 랜덤 인덱스 생성
@@ -63,7 +63,11 @@ int calculate_score(char* characters) {
     for (int i = 0; i < 6; i++) {
         switch (characters[i]) {
         case 'X':
+            score -= 30;
+            break;
         case 'B':
+            score -= 20;
+            break;
         case 'N':
             score -= 10;
             break;
@@ -82,7 +86,12 @@ int calculate_score(char* characters) {
 
 void display_menu() {
     // 메뉴를 화면에 출력
-    print_centered("유전자 결합 게임");
+    print_centered(" _____                     _    _       ");
+    print_centered("|  __ |                   | |  (_)      ");
+    print_centered("| |  |/  ___  _ __    ___ | |_  _   ___ ");
+    print_centered("| | __  / _ || '_ |  / _ || __|| | / __|");
+    print_centered("| |_| ||  __/| | | ||  __/| |_ | || (__ ");
+    print_centered("|____/ |___||_| |_| |___| |__| |_| |___|");
     printf("\n");  // 한 줄 공백
 
     print_centered("1. 시작");
@@ -179,6 +188,7 @@ int main() {
             }
 
             // 게임 종료 후 최종 문자를 보여주고 점수 계산 후 출력
+            system("cls");
             printf("\n최종 결과:\n");
             for (int i = 0; i < 6; i++) {
                 set_text_color(colors[i]);  // 각 문자에 대해 색상 설정
@@ -198,9 +208,8 @@ int main() {
             system("cls");
             display_menu();
             printf("\n게임 설명:\n");
-            printf("이 게임은 X, B, N, S, G 문자가 랜덤으로 나와 점수를 부여합니다. 문자를 지정해 바꿀 수 있는 기회가 3번 있고, 가장 높은 점수를 기록하는게 목표입니다.\n");
-            printf("X, B, N은 -10점, S는 40점, G는 20점입니다.\n");
-            printf("랜덤하게 점수를 계산하고 출력합니다.\n");
+            printf("Genetic은 X, B, N, S, G 문자가 랜덤으로 구성된 6개의 유전자입니다. 문자를 지정해 바꿀 수 있는 기회가 3번 있고, 가장 좋은 유전자를 구성하는게 목표입니다.\n");
+            printf("X, B, N은 각각 -30, -20, -10점, S는 40점, G는 20점입니다. 가장 높은 점수를 기록해보세요.\n");
         }
         else if (choice == 3) {
             // 종료
