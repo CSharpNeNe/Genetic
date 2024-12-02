@@ -58,6 +58,27 @@ void print_random_character_and_score() {
     printf("%c",characters[index]);
 } //유전자 1번째부터 6번째까지 색깔과 문자 출력
 
+int calculate_score(char* characters) {
+    int score = 0;
+    for (int i = 0; i < 6; i++) {
+        switch (characters[i]) {
+        case 'X':
+        case 'B':
+        case 'N':
+            score -= 10;
+            break;
+        case 'S':
+            score += 40;
+            break;
+        case 'G':
+            score += 20;
+            break;
+        default:
+            break;
+        }
+    }
+    return score; //점수 계산해주는 함수, X,B,N은 -10점, S는 40점, G는 20점
+
 void display_menu() {
     // 메뉴를 화면에 출력
     print_centered("유전자 결합 게임");
@@ -71,16 +92,35 @@ void display_menu() {
 int main() {
     // 랜덤 시드를 초기화
     srand(time(NULL));
-
     // 게임 시작 화면 출력
     display_menu();
 
     int game_running = 1;
     while (game_running) {
         // 사용자 선택을 받기 위한 변수
+        char input[100];
         int choice;
+
         printf("\n선택: ");
-        scanf("%d", &choice);
+
+        // 입력 버퍼 초기화
+        memset(input, 0, sizeof(input));
+
+        // 문자열로 입력 받기
+        if (fgets(input, sizeof(input), stdin) == NULL) {
+            // 입력 오류 시 처리
+            printf("\n입력 오류가 발생했습니다.\n");
+            continue;
+        }
+
+        // 개행 문자 제거
+        input[strcspn(input, "\n")] = 0;
+
+        // 입력이 숫자인지 확인
+        if (sscanf(input, "%d", &choice) != 1) {
+            printf("\n잘못된 입력입니다. 숫자를 입력해주세요.\n");
+            continue;
+        }
 
         // 선택에 따른 처리
         if (choice == 1) {
@@ -90,6 +130,7 @@ int main() {
             for (int i = 0; i < 6; i++) {
                 print_random_character_and_score();
             }
+            printf("\n");
         }
         else if (choice == 2) {
             // 게임 설명
@@ -101,12 +142,12 @@ int main() {
         else if (choice == 3) {
             // 종료
             printf("\n게임을 종료합니다.\n");
+            game_running = 0;
         }
         else {
             // 잘못된 선택
             printf("\n잘못된 선택입니다. 1, 2, 3 중에서 선택해 주세요.\n");
         }
     }
-
     return 0;
 }
