@@ -30,7 +30,7 @@ typedef enum {
 void set_text_color(Color text_color) {
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleTextAttribute(hConsole, text_color);
-}
+} //색깔 함수
 
 
 void print_centered(const char* str)  { 
@@ -75,36 +75,37 @@ int main() {
     // 게임 시작 화면 출력
     display_menu();
 
-    // 사용자 선택을 받기 위한 변수
-    int choice;
-    printf("\n선택: ");
-    scanf("%d", &choice);
+    int game_running = 1;
+    while (game_running) {
+        // 사용자 선택을 받기 위한 변수
+        int choice;
+        printf("\n선택: ");
+        scanf("%d", &choice);
 
-    // 선택에 따른 처리
-    switch (choice) {
-    case 1:
-        // 게임 시작
-        printf("\n게임을 시작합니다!\n\n");
-        // 1번부터 6번까지 랜덤으로 문자 출력 및 점수 출력
-        for (int i = 0; i < 6; i++) {
-            print_random_character_and_score();
+        // 선택에 따른 처리
+        if (choice == 1) {
+            // 게임 시작
+            printf("\n게임을 시작합니다!\n\n");
+            // 1번부터 6번까지 랜덤으로 문자 출력 및 점수 출력
+            for (int i = 0; i < 6; i++) {
+                print_random_character_and_score();
+            }
         }
-        break;
-    case 2:
-        // 게임 설명
-        printf("\n게임 설명:\n");
-        printf("이 게임은 X, B, N, S, G 문자가 랜덤으로 나와 점수를 부여합니다.\n");
-        printf("X, B, N은 -10점, S는 40점, G는 20점입니다.\n");
-        printf("랜덤하게 점수를 계산하고 출력합니다.\n");
-        break;
-    case 3:
-        // 종료
-        printf("\n게임을 종료합니다.\n");
-        break;
-    default:
-        // 잘못된 선택
-        printf("\n잘못된 선택입니다. 1, 2, 3 중에서 선택해 주세요.\n");
-        break;
+        else if (choice == 2) {
+            // 게임 설명
+            printf("\n게임 설명:\n");
+            printf("이 게임은 X, B, N, S, G 문자가 랜덤으로 나와 점수를 부여합니다. 문자를 지정해 바꿀 수 있는 기회가 3번 있고, 가장 높은 점수를 기록하는게 목표입니다.\n");
+            printf("X, B, N은 -10점, S는 40점, G는 20점입니다.\n");
+            printf("랜덤하게 점수를 계산하고 출력합니다.\n");
+        }
+        else if (choice == 3) {
+            // 종료
+            printf("\n게임을 종료합니다.\n");
+        }
+        else {
+            // 잘못된 선택
+            printf("\n잘못된 선택입니다. 1, 2, 3 중에서 선택해 주세요.\n");
+        }
     }
 
     return 0;
