@@ -1,3 +1,5 @@
 ﻿  Screen.c
-C:\Users\addmin\Desktop\Genetic\Genetic\Genetic\Screen.c(8,15): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  Genetic.vcxproj -> C:\Users\addmin\Desktop\Genetic\Genetic\x64\Debug\Genetic.exe
+C:\Users\addmin\Desktop\Genetic\Genetic\Genetic\Screen.c(36,15): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\addmin\Desktop\Genetic\Genetic\Genetic\Screen.c(55,11): warning C4244: '함수': 'time_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\addmin\Desktop\Genetic\Genetic\Genetic\Screen.c(59,9): warning C4013: 'print_random_character_and_score'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\addmin\Desktop\Genetic\Genetic\Genetic\Screen.c(65,6): error C2371: 'print_random_character_and_score': 재정의. 기본 형식이 다릅니다.
