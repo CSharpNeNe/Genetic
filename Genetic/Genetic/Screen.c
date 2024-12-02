@@ -55,7 +55,7 @@ void print_random_character_and_score() {
     set_text_color(colors[index]);
 
     // 문자 출력
-    printf("%c: %d점\n", characters[index], scores[index]);
+    printf("%c",characters[index]);
 } //유전자 1번째부터 6번째까지 색깔과 문자 출력
 
 void display_menu() {
