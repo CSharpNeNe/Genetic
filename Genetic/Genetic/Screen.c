@@ -26,3 +26,19 @@ int main() {
 
     return 0;
 }
+//유전자 1번째부터 6번째까지 색깔과 문자 출력
+void print_random_character_and_score() {
+    // 랜덤 문자를 생성 (0부터 5까지)
+    char characters[] = { 'X', 'B', 'N', 'S', 'G' };
+    int scores[] = { -10, -10, -10, 40, 20 };  // 각 문자의 점수
+    Color colors[] = { RED, RED, RED, YELLOW, YELLOW };  // 빨간색은 X, B, N, 노란색은 S, G
+
+    // 랜덤 인덱스 생성
+    int index = rand() % 5;  // 0부터 4까지의 랜덤 인덱스
+
+    // 색상 설정
+    set_text_color(colors[index]);
+
+    // 문자 출력
+    printf("%c: %d점\n", characters[index], scores[index]);
+}
